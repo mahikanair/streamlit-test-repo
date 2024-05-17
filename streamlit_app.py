@@ -14,7 +14,7 @@ ph = st.slider('pH_Value', float(3.51), float(9.93), float(3.51))
 rf = st.slider('Rainfall', float(20.22), float(298), float(20.22))
 
 # Update this URL to point to your deployed Flask API
-url = https://crop-classification.onrender.com/predict
+url = "https://crop-classification.onrender.com/predict"
 
 if st.button('Predict'):
     response = requests.post(url, json={'features': [sl, sw, pl, pw]})
