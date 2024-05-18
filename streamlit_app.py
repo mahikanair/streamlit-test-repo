@@ -17,7 +17,17 @@ rf = st.slider('Rainfall', float(20.22), float(298), float(20.22))
 url = "https://crop-classification.onrender.com/predict"
 
 if st.button('Predict'):
-    response = requests.post(url, json={'features': [sl, sw, pl, tl, hu, ph, rf]})
+    # Construct the correct JSON payload
+    payload = {
+        'Nitrogen': sl,
+        'Phosphorus': sw,
+        'Potassium': pl,
+        'Temperature': tl,
+        'Humidity': hu,
+        'pH_Value': ph,
+        'Rainfall': rf
+    }
+    response = requests.post(url, json=payload)
     if response.status_code == 200:
         prediction = response.json()['prediction']
         st.success(f'The predicted Iris class is: {prediction}')
