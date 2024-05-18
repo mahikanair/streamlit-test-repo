@@ -2,3 +2,5 @@ streamlit
 requests
 scikit-learn
 flask
+pandas
+numpy
