@@ -13,6 +13,7 @@ st.caption('Single Crop Prediction')
 st.write("n the Single Crop Prediction section, users can manually input soil and weather parameters to get a prediction for the most suitable crop to plant - by typing in the numbers or using the slider.")
 st.caption('Multiple Crops Prediction')
 st.write("In the Multiple Crops Prediction section, users can upload a CSV file containing multiple sets of soil and weather parameters. This feature is particularly useful for larger farms or agricultural planning over a wide area.")
+st.caption("To see information on the dataset, check out the sidebar!")
 # Add a sidebar
 st.sidebar.title("The Crop Classification Dataset")
 
