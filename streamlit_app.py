@@ -236,7 +236,6 @@ elif prediction_type == 'Multiple Crops Prediction':
                                         st.image(image_path, caption=f'{predicted_crop} Image')
                                     else:
                                         st.warning(f'No image found for {predicted_crop}')
-                                    st.markdown('---')
                 
                                 # Move to the next column
                                 col_index += 1
