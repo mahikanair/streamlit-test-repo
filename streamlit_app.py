@@ -13,6 +13,38 @@ st.caption('Single Crop Prediction')
 st.write("n the Single Crop Prediction section, users can manually input soil and weather parameters to get a prediction for the most suitable crop to plant - by typing in the numbers or using the slider.")
 st.caption('Multiple Crops Prediction')
 st.write("In the Multiple Crops Prediction section, users can upload a CSV file containing multiple sets of soil and weather parameters. This feature is particularly useful for larger farms or agricultural planning over a wide area.")
+# Add a sidebar
+st.sidebar.title("Sidebar")
+
+# Add text to the sidebar
+st.sidebar.header("Information about the Dataset")
+st.sidebar.write("The Crop Recommendation Dataset is a comprehensive dataset designed to assist in the optimal selection of crops based on soil and weather conditions. It contains 2,200 rows of data, each representing a unique combination of agricultural parameters and the corresponding recommended crop. The dataset includes seven key features: Nitrogen, Phosphorus, and Potassium content ratios in the soil, temperature in degrees Celsius, relative humidity in percentage, pH value of the soil, and rainfall in millimeters. These features are crucial for determining the suitability of various crops. The dataset categorizes crops into 22 different classes, providing a wide range of options for agricultural planning. By analyzing this dataset, one can leverage advanced machine learning techniques to make informed decisions about the most suitable crops to grow under specific soil and weather conditions, thereby enhancing crop yields, improving soil health, and increasing overall agricultural productivity. This dataset is available on Kaggle and serves as a valuable resource for researchers, agricultural planners, and farmers aiming to maximize crop rotation efficiency and agricultural performance.")
+st.sidebar.write("Crops Present:")
+st.sidebar.write("Apple")
+st.sidebar.write("Banana")
+st.sidebar.write("Blackgram")
+st.sidebar.write("Chickpea")
+st.sidebar.write("Coconut")
+st.sidebar.write("Coffee")
+st.sidebar.write("Cotton")
+st.sidebar.write("Grapes")
+st.sidebar.write("Jute")
+st.sidebar.write("Kidney Beans")
+st.sidebar.write("Lentil")
+st.sidebar.write("Maize")
+st.sidebar.write("Mango")
+st.sidebar.write("Moth Beans")
+st.sidebar.write("Mung Beans")
+st.sidebar.write("Muskmelon")
+st.sidebar.write("Orange")
+st.sidebar.write("Papaya")
+st.sidebar.write("Pigeon Peas")
+st.sidebar.write("Pomegranate")
+st.sidebar.write("Rice")
+st.sidebar.write("Watermelon")
+
+dataset_url = "https://www.kaggle.com/datasets/varshitanalluri/crop-recommendation-dataset"
+st.sidebar.markdown(f"[Link to the dataset]({dataset_url})")
 # Create a selection box for single or multiple predictions
 prediction_type = st.selectbox('Select Prediction Type', ['Single Crop Prediction', 'Multiple Crops Prediction'])
 
