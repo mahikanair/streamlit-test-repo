@@ -6,7 +6,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 
-COPY -r "crop images" .
+COPY crop_images .
 COPY streamlit_app.py .
 
 EXPOSE 8501
