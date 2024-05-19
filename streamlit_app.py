@@ -6,6 +6,13 @@ import os
 
 st.title('Crop Prediction')
 st.caption('Enhancing Agricultural Performance Through Advanced Crop Prediction')
+
+st.write("This app aims to maximize crop rotation efficiency and overall agricultural performance by leveraging advanced machine learning techniques for crop classification. With the advent of affordable soil testing kits, it has become feasible for governments to implement this technology to aid farmers in making informed decisions about their crop choices. By using this app, farmers can optimize their crop yields, enhance soil health, and achieve better agricultural productivity.")
+st.write("Here are the different prediction types:")
+st.caption('Single Crop Prediction')
+st.write("n the Single Crop Prediction section, users can manually input soil and weather parameters to get a prediction for the most suitable crop to plant - by typing in the numbers or using the slider.")
+st.caption('Multiple Crops Prediction')
+st.write("In the Multiple Crops Prediction section, users can upload a CSV file containing multiple sets of soil and weather parameters. This feature is particularly useful for larger farms or agricultural planning over a wide area.")
 # Add a sidebar
 st.sidebar.title("The Crop Classification Dataset")
 
