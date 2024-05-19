@@ -52,26 +52,26 @@ if prediction_type == 'Single Crop Prediction':
         response = requests.post(url, json=payload)
         if response.status_code == 200:
             prediction = response.json().get('prediction', 'No prediction found')
-            st.success(f'The predicted crop class is: {prediction}')
+            st.success(f'The crop one should grow here is: {prediction}')
             # Extract the first word from the prediction
             predicted_crop = prediction.split()[0]
             
             # Define the path to the crop images directory
-            image_directory = "/app/images"
+           # image_directory = "/app/images"
             
             # Check for image files in the directory
-            image_path = None
-            for ext in ["jpg", "jpeg"]:
-                potential_path = os.path.join(image_directory, f"{predicted_crop}.{ext}")
-                if os.path.exists(potential_path):
-                    image_path = potential_path
-                    break
+            #image_path = None
+            #for ext in ["jpg", "jpeg"]:
+             #   potential_path = os.path.join(image_directory, f"{predicted_crop}.{ext}")
+            #    if os.path.exists(potential_path):
+             #       image_path = potential_path
+           #         break
             
-            if image_path:
+           # if image_path:
                 # Display the image
-                st.image(image_path)
-            else:
-                st.warning(f'No image found for {predicted_crop}')
+           #     st.image(image_path)
+          #  else:
+            #    st.warning(f'No image found for {predicted_crop}')
         else:
             st.error('Failed to get prediction')
             
@@ -157,26 +157,26 @@ elif prediction_type == 'Multiple Crops Prediction':
                             if response.status_code == 200:
                                 prediction = response.json().get('prediction', 'No prediction found')
                                 st.write('For Field', index)
-                                st.write(prediction)
+                                st.write('One should grow', prediction)
                                 # Extract the first word from the prediction
                                 predicted_crop = prediction.split()[0]
                                 
-                                # Define the path to the crop images directory
-                                image_directory = "/app/images"
+                                ## Define the path to the crop images directory
+                               # image_directory = "/app/images"
                                 
                                 # Check for image files in the directory
-                                image_path = None
-                                for ext in ["jpg", "jpeg"]:
-                                    potential_path = os.path.join(image_directory, f"{predicted_crop}.{ext}")
-                                    if os.path.exists(potential_path):
-                                        image_path = potential_path
-                                        break
+                              #  image_path = None
+                              #  for ext in ["jpg", "jpeg"]:
+                                #    potential_path = os.path.join(image_directory, f"{predicted_crop}.{ext}")
+                                   # if os.path.exists(potential_path):
+                                       # image_path = potential_path
+                                     #   break
                                 
-                                if image_path:
+                              #  if image_path:
                                     # Display the image
-                                    st.image(image_path, caption=f'{predicted_crop} Image')
-                                else:
-                                    st.warning(f'No image found for {predicted_crop}')
+                                #    st.image(image_path, caption=f'{predicted_crop} Image')
+                               # else:
+                                 #   st.warning(f'No image found for {predicted_crop}')
                                 st.markdown('---')
                             else:
                                 st.error(f'Failed to get prediction for row {index + 1}')
