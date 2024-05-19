@@ -57,7 +57,7 @@ if prediction_type == 'Single Crop Prediction':
             predicted_crop = prediction.split()[0]
             
             # Define the path to the crop images directory
-            image_directory = "crop_images"
+            image_directory = "./crop_images"
             
             # Check for image files in the directory
             image_path = None
