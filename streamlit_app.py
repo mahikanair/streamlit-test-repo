@@ -7,10 +7,10 @@ import os
 st.title('Crop Prediction')
 st.caption('Enhancing Agricultural Performance Through Advanced Crop Prediction')
 # Add a sidebar
-st.sidebar.title("Sidebar")
+st.sidebar.title("The Crop Classification Dataset")
 
 # Add text to the sidebar
-st.sidebar.header("Information about the Dataset")
+st.sidebar.header("Information")
 
 # Use markdown for better formatting
 st.sidebar.markdown("""
