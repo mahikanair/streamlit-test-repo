@@ -161,7 +161,7 @@ elif prediction_type == 'Multiple Crops Prediction':
                                 predicted_crop = prediction.split()[0]
                                 
                                 ## Define the path to the crop images directory
-                                image_directory = "/app/images"
+                                image_directory = "crop_image"
                                 
                                 # Check for image files in the directory
                                 image_path = None
