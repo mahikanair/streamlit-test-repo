@@ -196,53 +196,53 @@ elif prediction_type == 'Multiple Crops Prediction':
                         st.error(error)
                     
                 else:
-    # Update this URL to point to your deployed Flask API for single predictions
-    url = "https://crop-class.onrender.com/predict"
-    if st.button('Predict Multiple Crops'):
-        columns = st.columns(2)  # Create two columns
-        col_index = 0  # To keep track of the current column
-
-        for index, row in data.iterrows():
-            payload = {
-                'Nitrogen': row[0],
-                'Phosphorus': row[1],
-                'Potassium': row[2],
-                'Temperature': row[3],
-                'Humidity': row[4],
-                'pH_Value': row[5],
-                'Rainfall': row[6]
-            }
-            response = requests.post(url, json=payload)
-            if response.status_code == 200:
-                prediction = response.json().get('prediction', 'No prediction found')
-                predicted_crop = prediction.split()[0]
-
-                # Define the path to the crop images directory
-                image_directory = "crop_image"
-
-                # Check for image files in the directory
-                image_path = None
-                for ext in ["jpg", "jpeg"]:
-                    potential_path = os.path.join(image_directory, f"{predicted_crop}.{ext}")
-                    if os.path.exists(potential_path):
-                        image_path = potential_path
-                        break
-
-                # Select the current column
-                with columns[col_index]:
-                    st.write(f'For Field {index}')
-                    st.write(f'One should grow {prediction}')
-                    if image_path:
-                        st.image(image_path, caption=f'{predicted_crop} Image')
-                    else:
-                        st.warning(f'No image found for {predicted_crop}')
-                    st.markdown('---')
-
-                # Move to the next column
-                col_index += 1
-                if col_index >= 2:
-                    col_index = 0
-                    columns = st.columns(2)  # Create new columns for the next row
-
-            else:
-                st.error(f'Failed to get prediction for row {index + 1}')
+                    # Update this URL to point to your deployed Flask API for single predictions
+                    url = "https://crop-class.onrender.com/predict"
+                    if st.button('Predict Multiple Crops'):
+                        columns = st.columns(2)  # Create two columns
+                        col_index = 0  # To keep track of the current column
+                
+                        for index, row in data.iterrows():
+                            payload = {
+                                'Nitrogen': row[0],
+                                'Phosphorus': row[1],
+                                'Potassium': row[2],
+                                'Temperature': row[3],
+                                'Humidity': row[4],
+                                'pH_Value': row[5],
+                                'Rainfall': row[6]
+                            }
+                            response = requests.post(url, json=payload)
+                            if response.status_code == 200:
+                                prediction = response.json().get('prediction', 'No prediction found')
+                                predicted_crop = prediction.split()[0]
+                
+                                # Define the path to the crop images directory
+                                image_directory = "crop_image"
+                
+                                # Check for image files in the directory
+                                image_path = None
+                                for ext in ["jpg", "jpeg"]:
+                                    potential_path = os.path.join(image_directory, f"{predicted_crop}.{ext}")
+                                    if os.path.exists(potential_path):
+                                        image_path = potential_path
+                                        break
+                
+                                # Select the current column
+                                with columns[col_index]:
+                                    st.write(f'For Field {index}')
+                                    st.write(f'One should grow {prediction}')
+                                    if image_path:
+                                        st.image(image_path, caption=f'{predicted_crop} Image')
+                                    else:
+                                        st.warning(f'No image found for {predicted_crop}')
+                                    st.markdown('---')
+                
+                                # Move to the next column
+                                col_index += 1
+                                if col_index >= 2:
+                                    col_index = 0
+                                    columns = st.columns(2)  # Create new columns for the next row
+                
+                            else:
+                                st.error(f'Failed to get prediction for row {index + 1}')
