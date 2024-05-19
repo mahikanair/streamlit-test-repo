@@ -68,7 +68,7 @@ if prediction_type == 'Single Crop Prediction':
                     break
             
             if image_path:
-                 Display the image
+                 #Display the image
                 st.image(image_path)
             else:
                 st.warning(f'No image found for {predicted_crop}')
