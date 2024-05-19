@@ -25,7 +25,7 @@ def input_feature(label, min_value, max_value, value):
 
 if prediction_type == 'Single Crop Prediction':
     st.header('Single Crop Prediction')
-
+    st.image('./Muskmelon.jpeg')
     # Input features for single crop prediction with both slider and input box
     sl = input_feature('Nitrogen', 0, 140, 0)
     sw = input_feature('Phosphorus', 5, 145, 5)
@@ -57,21 +57,21 @@ if prediction_type == 'Single Crop Prediction':
             predicted_crop = prediction.split()[0]
             
             # Define the path to the crop images directory
-           # image_directory = "/app/images"
+            image_directory = ""
             
             # Check for image files in the directory
-            #image_path = None
-            #for ext in ["jpg", "jpeg"]:
-             #   potential_path = os.path.join(image_directory, f"{predicted_crop}.{ext}")
-            #    if os.path.exists(potential_path):
-             #       image_path = potential_path
-           #         break
+            image_path = None
+            for ext in ["jpg", "jpeg"]:
+                potential_path = os.path.join(image_directory, f"{predicted_crop}.{ext}")
+                if os.path.exists(potential_path):
+                    image_path = potential_path
+                    break
             
-           # if image_path:
-                # Display the image
-           #     st.image(image_path)
-          #  else:
-            #    st.warning(f'No image found for {predicted_crop}')
+            if image_path:
+                 Display the image
+                st.image(image_path)
+            else:
+                st.warning(f'No image found for {predicted_crop}')
         else:
             st.error('Failed to get prediction')
             
