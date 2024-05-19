@@ -241,7 +241,9 @@ elif prediction_type == 'Multiple Crops Prediction':
                                 col_index += 1
                                 if col_index >= 2:
                                     col_index = 0
+                                    st.markdown('---')
                                     columns = st.columns(2)  # Create new columns for the next row
+                                    
                 
                             else:
                                 st.error(f'Failed to get prediction for row {index + 1}')
