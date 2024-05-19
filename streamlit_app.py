@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 import os
 
-st.title('Crop Prediction')
+st.title('Crop To Grow Prediction')
 st.caption('Enhancing Agricultural Performance Through Advanced Crop Prediction')
 
 st.write("This app aims to maximize crop rotation efficiency and overall agricultural performance by leveraging advanced machine learning techniques for crop classification. With the advent of affordable soil testing kits, it has become feasible for governments to implement this technology to aid farmers in making informed decisions about their crop choices. By using this app, farmers can optimize their crop yields, enhance soil health, and achieve better agricultural productivity.")
